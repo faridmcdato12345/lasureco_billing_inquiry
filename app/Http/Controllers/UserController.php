@@ -18,7 +18,7 @@ class UserController extends Controller
         return response()->json($data,200);
     }
     public function checkUserFullName(Request $request){
-        $response = Http::post('http://222.127.146.254:8000/api/v1/consumer/full_name', [
+        $response = Http::post('http://b3aa0af3dcb9.sn.mynetname.net/api/v1/consumer/full_name', [
             'cm_full_name' => $request->full_name,
         ]);
         if($response->failed()){
@@ -28,7 +28,7 @@ class UserController extends Controller
         }
     }
     public function checkUserAccount(Request $request){
-        $response = Http::post('http://222.127.146.254:8000/api/v1/consumer/account_no', [
+        $response = Http::post('http://b3aa0af3dcb9.sn.mynetname.net/api/v1/consumer/account_no', [
             'cm_account_no' => $request->account_no,
         ]);
         if($response->failed()){
@@ -39,7 +39,7 @@ class UserController extends Controller
     }
 
     public function checkConsumerInputValidation(Request $request){
-        $response = Http::post('http://222.127.146.254:8000/api/v1/consumer/input_validation',[
+        $response = Http::post('http://b3aa0af3dcb9.sn.mynetname.net/api/v1/consumer/input_validation',[
             'cm_full_name' => $request->full_name,
             'cm_account_no' => $request->account_no,
         ]);
@@ -61,7 +61,7 @@ class UserController extends Controller
 
     public function powerbillInquiry(Request $request){
         $billPeriod = str_replace("-","",$request->mr_bill_date);
-        $response = Http::post('http://222.127.146.254:8000/api/v1/inquiry/power_bill', [
+        $response = Http::post('http://b3aa0af3dcb9.sn.mynetname.net/api/v1/inquiry/power_bill', [
             'bill_period' => $billPeriod ,
             'account_no' => $request->mr_account_no
         ]);
