@@ -6,7 +6,12 @@ $.ajaxSetup({
 $(document).ready(function(){
     getArrears()
     .then((response) => {
-        $('.total-arrears').text(response.total_arrears)
+        var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'PHP',
+        });
+        console.log(response[0].total_arrears)
+        $('.total-arrears').text(formatter.format(response[0].total_arrears))
     })
     .catch((error) => {
         $('.total-arrears').text('Invalid!')
@@ -371,7 +376,7 @@ function checkCurrentPassword(current_pass){
 }
 function getArrears(){
     var ex =  '/user/total_arrears';
-    let userAccount = $('#user-account').val()
+    let userAccount = $('#account_no').val()
     return new Promise((resolve,reject) => {
        $.ajax({
            url: rootDirectory(ex),
