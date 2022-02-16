@@ -1481,14 +1481,63 @@ footer{
 .menu-line:hover{
     cursor: pointer;
 }
-@media only screen and (max-width: 600px){
+@media only screen and (min-width: 320px){
     .title-header{
-        background-image: none!important;
+        background-position: center;
+        background-size: contain;
+    }
+    .w3-padding-16 {
+        padding-top: 15px!important;
+        padding-bottom: 41px!important;
+    }
+    .w3-white{
+        height: 60px;
+    }
+    .title-header p{
+        display: none;
+    }
+    .bill-container{
+        width:100%;
     }
 }
-@media only screen and (min-width:601px){
+@media only screen and (min-width: 375px){
     .title-header{
-        background-position: 28% 70%;
+        padding-left: 14%;
+        background-position-x: 77px;
+        padding-bottom: 0px!important;
+    }
+    .title-header p{
+        display: block;
+    }
+    .w3-white{
+        height: 5rem;
+    }
+    .bill-container{
+        width: 24rem;
+    }
+}
+@media only screen and (min-width: 393px){
+    .title-header{
+        background-position-x: 6rem;
+    }
+
+}
+@media only screen and (min-width: 414px){
+    .title-header{
+        background-position-x: 6.5rem;
+        background-size: contain;
+    }
+
+}
+@media only screen and (min-width: 480px){
+    .title-header{
+        background-position-x: 9rem;
+    }
+
+}
+@media only screen and (min-width:600px){
+    .title-header{
+        background-position-x: 13.5rem;
     }
 }
 @media only screen and (min-width:650px){
@@ -1503,12 +1552,17 @@ footer{
 }
 @media only screen and (min-width:700px){
     .title-header{
-        background-position: 33% 70%;
+        background-position-x: 18rem;
+    }
+}
+@media only screen and (min-width:768px){
+    .title-header{
+        background-position-x: 20rem;
     }
 }
 @media only screen and (min-width:800px){
     .title-header{
-        background-position: 34% 70%;
+        background-position-x: 21rem;
     }
 }
 @media only screen and (min-width:900px){
