@@ -82,4 +82,16 @@ class UserController extends Controller
         }
         return response()->json($user,200);
     }
+    public function getTotalArrears(Request $request){
+        $response = Http::post('http://222.127.146.254/api/v1/consumer/arrears', [
+            'account_no' => $request->mr_account_no
+        ]);
+        if($response->failed()){
+            return response()->json($response,404);
+        }
+        if($response->serverError()){
+            return response()->json(['message' => 'Server connection error!'],500);
+        }
+        return response()->json($response->json(),200);
+    }
 }
