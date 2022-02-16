@@ -33,5 +33,6 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/check/user/account',[UserController::class,'checkUserAccountInfo']);
     Route::post('/check/user/password',[CheckUserPassword::class,'checkCurrentPassword']);
     Route::post('/user/change/password',[UserChangePassword::class,'changePassword']);
+    Route::post('/user/total_arrears',[UserController::class,'getTotalArrears']);
 });
 

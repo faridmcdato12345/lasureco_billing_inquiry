@@ -3,6 +3,7 @@
 <div class="flex justify-center ... text-sm">
     <div class="">
         <div class="">
+            <p>TOTAL ARREARS: <span class="total-arrears"></span></p>
             <input type="hidden" name="user-account" id="user-account" value="{{$id}}">
             <div class="p-6 w-96 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">

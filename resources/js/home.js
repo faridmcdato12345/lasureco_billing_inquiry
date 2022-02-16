@@ -4,6 +4,13 @@ $.ajaxSetup({
     }
 });
 $(document).ready(function(){
+    getArrears()
+    .then((response) => {
+        $('.total-arrears').text(response.total_arrears)
+    })
+    .catch((error) => {
+        $('.total-arrears').text('Invalid!')
+    })
     $('#full_name').focusout(function(){
         if($(this).val() == ''){
             $('.account-name-container .icon-ex').css('display','block')
@@ -352,6 +359,26 @@ function checkCurrentPassword(current_pass){
            data: {
                password: current_pass,
                user_id: userAccount
+           },
+           success: function(data){
+               resolve(data)
+           },
+           error: function(error){
+               reject(error)
+           }
+       })
+   })
+}
+function getArrears(){
+    var ex =  '/user/total_arrears';
+    let userAccount = $('#user-account').val()
+    return new Promise((resolve,reject) => {
+       $.ajax({
+           url: rootDirectory(ex),
+           dataType: "json",
+           method: "post",
+           data: {
+                mr_account_no: userAccount
            },
            success: function(data){
                resolve(data)
