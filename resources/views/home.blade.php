@@ -3,12 +3,14 @@
 <div class="flex justify-center ... text-sm">
     <div class="">
         <div class="">
-            <p>TOTAL ARREARS: <span class="total-arrears"></span></p>
+            <input type="hidden" name="account_no" id="account_no" value="{{$accnt_no}}">
             <input type="hidden" name="user-account" id="user-account" value="{{$id}}">
             <div class="p-6 w-96 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Power Bill</h5>
                 </a>
+                <hr>
+                <p class="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">TOTAL ARREARS: <span class="total-arrears"></span></p>
                 <hr>
                 <div>
                     <label for="account_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Bill Month:</label>
