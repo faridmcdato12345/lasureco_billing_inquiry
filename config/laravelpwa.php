@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'name' => 'LaravelPWA',
+    'name' => 'LASURECO-OBI',
     'manifest' => [
-        'name' => env('APP_NAME', 'My PWA App'),
-        'short_name' => 'PWA',
+        'name' => env('APP_NAME', 'LASURECO-OBI'),
+        'short_name' => 'LASURECO-OBI',
         'start_url' => '/',
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
