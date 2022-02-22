@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\FacebookController;
+use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\CheckUserPassword;
 use App\Http\Controllers\UserChangePassword;
 use App\Http\Controllers\UserController;
@@ -15,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/auth/facebook/redirect', [FacebookController::class, 'handleFacebookRedirect'])->name('facebook.redirect');
+Route::get('/auth/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
+
 
 Route::get('/', function () {
     return view('auth.login');
