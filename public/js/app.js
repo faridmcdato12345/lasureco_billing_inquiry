@@ -5452,7 +5452,6 @@ $(document).ready(function () {
       style: 'currency',
       currency: 'PHP'
     });
-    console.log(response[0].total_arrears);
     $('.total-arrears').text(formatter.format(response[0].total_arrears));
   })["catch"](function (error) {
     $('.total-arrears').text('Invalid!');
@@ -5498,11 +5497,11 @@ $(document).ready(function () {
       });
     }
   });
-  $('#account_no').focus(function () {
+  $('#account_number').focus(function () {
     $('.account-no-container .icon-wrong').css('display', 'none');
     $('.account-no-container .icon-ex').css('display', 'none');
     $('.account-no-container .icon-check').css('display', 'none');
-    $('#account_no').css('border-color', 'black');
+    $('#account_number').css('border-color', 'black');
     $('.error-message').remove();
 
     if ($('#full_name').val() == '') {
@@ -5516,19 +5515,19 @@ $(document).ready(function () {
       }
     }
   });
-  $('#account_no').focusout(function () {
+  $('#account_number').focusout(function () {
     if ($(this).val() == '') {
       $('.account-no-container .icon-ex').css('display', 'block');
-      $('#account_no').css('border-color', 'red');
+      $('#account_number').css('border-color', 'red');
 
       if ($('.error-message-warning').length == 0) {
         $('.error-message').addClass('error-message-warning');
-        $('<p class="error-message">Account number is required</p>').insertAfter('#account_no');
+        $('<p class="error-message">Account number is required</p>').insertAfter('#account_number');
         $('.account-no-container .icon-wrong').css('display', 'none');
       }
     } else {
       checkAccountNo($(this).val()).then(function (response) {
-        $('#account_no').css('border-color', 'green');
+        $('#account_number').css('border-color', 'green');
         $('.account-no-container .icon-wrong').css('display', 'none');
         $('.account-no-container .icon-ex').css('display', 'none');
         $('.account-no-container .icon-check').css('display', 'block');
@@ -5536,7 +5535,7 @@ $(document).ready(function () {
       })["catch"](function (error) {
         if (error.status >= 500) {
           if ($('.error-message').length == 0) {
-            $('<p class="error-message">Server connection error</p>').insertAfter('#account_no');
+            $('<p class="error-message">Server connection error</p>').insertAfter('#account_number');
           } else {
             $('.error-message').text('Server connection error');
           }
@@ -5549,11 +5548,11 @@ $(document).ready(function () {
           }
 
           if ($('.error-message').length == 0) {
-            $('<p class="error-message">Account number is not a member consumer</p>').insertAfter('#account_no');
+            $('<p class="error-message">Account number is not a member consumer</p>').insertAfter('#account_number');
           }
         }
 
-        $('#account_no').css('border-color', 'red');
+        $('#account_number').css('border-color', 'red');
       });
     }
   });
@@ -5654,14 +5653,14 @@ $(document).ready(function () {
 $(document).on('click', '.consumer_save', function () {
   event.preventDefault();
   var ex = '/user/update';
-  validateInput($('#full_name').val(), $('#account_no').val()).then(function (response) {
+  validateInput($('#full_name').val(), $('#account_number').val()).then(function (response) {
     $.ajax({
       url: rootDirectory(ex),
       dataType: "json",
       method: "post",
       data: {
         full_name: $('#full_name').val(),
-        account_no: $('#account_no').val()
+        account_no: $('#account_number').val()
       },
       success: function success(data) {
         Swal.fire('Success!', 'User information was saved!', 'success');
@@ -5676,7 +5675,7 @@ $(document).on('click', '.consumer_save', function () {
       }
     });
   })["catch"](function (error) {
-    $('#account_no').css('border-color', 'red');
+    $('#account_number').css('border-color', 'red');
     Swal.fire({
       icon: 'error',
       title: 'Not found!',
@@ -5779,6 +5778,7 @@ function checkAccountNo(accountno) {
 }
 
 function validateInput(fullname, accountno) {
+  console.log($('#account_number').val());
   var ex = '/user/input_validation';
   return new Promise(function (resolve, reject) {
     $.ajax({
@@ -5787,7 +5787,7 @@ function validateInput(fullname, accountno) {
       method: "post",
       data: {
         full_name: fullname,
-        account_no: accountno
+        account_no: $('#account_number').val()
       },
       success: function success(data) {
         resolve(data);
@@ -5823,7 +5823,7 @@ function checkCurrentPassword(current_pass) {
 
 function getArrears() {
   var ex = '/user/total_arrears';
-  var userAccount = $('#account_no').val();
+  var userAccount = $('#account_number').val();
   return new Promise(function (resolve, reject) {
     $.ajax({
       url: rootDirectory(ex),
