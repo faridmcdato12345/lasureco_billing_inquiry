@@ -35,10 +35,10 @@
                 <div>
                     <label for="account_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Account Name:</label>
                     <div class="account-name-container">
-                    <i class='fa fa-check icon icon-check'></i>
-                    <i class='fa fa-times icon icon-wrong'></i>
-                    <i class='fa fa-exclamation icon icon-ex'></i>
-                    <input type="text" placeholder="ex: John Doe" name="full_name" id="full_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                        <i class='fa fa-check icon icon-check'></i>
+                        <i class='fa fa-times icon icon-wrong'></i>
+                        <i class='fa fa-exclamation icon icon-ex'></i>
+                        <input type="text" placeholder="ex: John Doe" name="full_name" id="full_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
                     </div>
                 </div>
                 <div>
@@ -47,7 +47,7 @@
                         <i class='fa fa-check icon icon-check'></i>
                         <i class='fa fa-times icon icon-wrong'></i>
                         <i class='fa fa-exclamation icon icon-ex'></i>
-                        <input type="text" placeholder="ex: 4343111111" name="account_no" id="account_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                        <input type="text" placeholder="ex: 4343111111" name="account_no" id="account_number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
                     </div>
                 </div>
                 <button type="button" class="consumer_save w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button>

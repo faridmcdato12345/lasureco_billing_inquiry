@@ -44,7 +44,7 @@ class UserController extends Controller
             'cm_account_no' => $request->account_no,
         ]);
         if($response->failed()){
-            return response()->json(['message' => 'Error!'],404);
+            return response()->json($response,404);
         }
         if($response->serverError()){
             return response()->json(['message' => 'Server connection error!'],500);
